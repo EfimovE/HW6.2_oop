@@ -39,17 +39,6 @@ public class Repository implements Storable {
         }
         return notes;
     }
-//    @Override
-//    public List<Note> getAllNotes() {
-//        List<String> lines = fileManager.readAllLines();
-//        List<Note> notes = new ArrayList<>();
-//        for (String line : lines) {
-//            String[] tmp = line.split(",");
-//            Note res = new Note(tmp[1], tmp[2]);
-//            notes.add(res);
-//        }
-//        return notes;
-//    }
 
 
     @Override

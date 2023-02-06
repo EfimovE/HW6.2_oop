@@ -37,11 +37,11 @@ public class ViewNote {
                         lst.forEach(i -> System.out.println(i + "\n"));
                         break;
                     case UPDATE:
-                        String numId = prompt("Идентификатор заметки для замены: ");
+                        String numId = prompt("ID заметки для замены: ");
                         noteController.updateNote(numId, createNote());
                         break;
                     case DELETE:
-                        String numID = prompt("Идентификатор заметки для удаления: ");
+                        String numID = prompt("ID заметки для удаления: ");
                         noteController.deleteNote(numID);
                         System.out.println(numID + " удален");
                         break;

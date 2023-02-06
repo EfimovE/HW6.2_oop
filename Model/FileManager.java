@@ -1,8 +1,16 @@
 package Model;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.jetbrains.annotations.NotNull;
+
 
 public class FileManager {
     private String fileName;
@@ -18,13 +26,16 @@ public class FileManager {
         }
     }
 
-    public void saveAllLines(@NotNull List<String> lines){
+    public void saveAllLines(List<String> lines){
         try (FileWriter writer = new FileWriter(fileName, false)) {
-            for (String line : lines) {
-                writer.write(line);
-                writer.append('\n');
+            if (lines != null) {
+                for (String line : lines) {
+                    writer.write(line);
+                    writer.append('\n');
+                }
+                writer.flush();
             }
-            writer.flush();
+            
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
